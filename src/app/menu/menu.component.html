@@ -1,0 +1,48 @@
+<div class="container mt-3">
+    <h3>Menu</h3>
+
+    <div class="col-lg-12 col-sm-12 col-xs-12 d-flex flex-column align-items-center">
+        <table class="table table-striped">
+            <thead>
+                <tr class="bg-info text-light">
+                    <td>S.N.</td>
+                    <td>Item Name</td>
+                    <td>Price</td>
+                    <td class="pl-4">Quantity</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items;  let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.itemName}}</td>
+                    <td>Rs. {{item.itemOptions.price}}</td>
+                    <td><span class="btn btn-primary mr-2" (click)="removeItem(item)">-</span>{{getQuantity(item)}} <span class="btn btn-primary ml-2" (click)="addItem(item)">+</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="total text-right">Total: Rs. {{getTotal()}}</h3>
+    
+    <button class="btn btn-success px-5 py-2" data-toggle="modal" data-target="#paymentConfirmationModal" type="button" [disabled]="orderEmpty()">Make Payment</button>
+</div>
+
+<div class="modal fade" id="paymentConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="paymentConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="paymentConfirmationModalLabel">Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          .Are you sure you want to make the order?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="makePayment()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>

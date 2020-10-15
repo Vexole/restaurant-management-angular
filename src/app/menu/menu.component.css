@@ -1,0 +1,24 @@
+td {
+    vertical-align: middle;
+}
+
+.total {
+    margin-right: 240px !important;
+}
+
+.payment {
+    margin-right:80px;
+    margin-left:80px;
+}
+
+@media screen and (max-width: 1200px) {
+    .total {
+        margin-right: 180px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .total {
+        margin-right: 110px !important;
+    }
+}

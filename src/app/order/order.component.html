@@ -1,0 +1,28 @@
+<div *ngIf="order" class="container mt-3">
+    <h3>Order Details</h3>
+    <div class="d-flex justify-content-center mb-3"><div class="mr-5">OrderId: <b>{{order.id}}</b> </div>
+    <div>OrderBy: <b>{{order.user.userName}}</b></div>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-xs-12 d-flex flex-column align-items-center">
+        <table class="table table-striped">
+            <thead>
+                <tr class="bg-info text-light">
+                    <td>S.N.</td>
+                    <td>Item</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of order.itemOrder;  let i =index">
+                    <td>{{i+1}}</td>
+                    <td>{{order.item.itemName}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>Rs. {{order.price}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <a routerLink="/payment/{{order.id}}"><button class="btn btn-success px-4">Make Payment</button></a> -->
+    </div>
+</div>
