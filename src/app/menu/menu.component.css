@@ -11,14 +11,25 @@ td {
     margin-left:80px;
 }
 
+.make-payment{
+    margin-left: 400px;
+}
+
 @media screen and (max-width: 1200px) {
     .total {
         margin-right: 180px !important;
+    }
+
+    .make-payment{
+        margin-left: 350px;
     }
 }
 
 @media screen and (max-width: 992px) {
     .total {
         margin-right: 110px !important;
+    }
+    .make-payment{
+        margin-left: 250px;
     }
 }

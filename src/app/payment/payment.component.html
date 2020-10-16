@@ -11,7 +11,7 @@
                     <td>Payment Method</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="hasPayments">
                 <tr *ngFor="let payment of payments;  let i =index">
                     <td>{{i+1}}</td>
                     <td>{{payment.orderLog.id}}</td>
@@ -22,5 +22,8 @@
                 </tr>
             </tbody>
         </table>
+        <div *ngIf="!hasPayments" class="no-payments">
+            No Payments Yet!!
+        </div>
     </div>
 </div>

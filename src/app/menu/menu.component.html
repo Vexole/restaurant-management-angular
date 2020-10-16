@@ -24,7 +24,7 @@
 
     <h3 class="total text-right">Total: Rs. {{getTotal()}}</h3>
     
-    <button class="btn btn-success px-5 py-2" data-toggle="modal" data-target="#paymentConfirmationModal" type="button" [disabled]="orderEmpty()">Make Payment</button>
+    <button class="btn btn-success make-payment mt-3 px-5 py-2" data-toggle="modal" data-target="#paymentConfirmationModal" type="button" [disabled]="orderEmpty()">Make Payment</button>
 </div>
 
 <div class="modal fade" id="paymentConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="paymentConfirmationModalLabel" aria-hidden="true">

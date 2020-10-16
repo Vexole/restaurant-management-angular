@@ -12,6 +12,7 @@ import { UserService } from '../service/user.service';
 export class OrdersComponent implements OnInit {
 
   orders: any;
+  hasOrders;
   constructor(private orderService: OrderService, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
@@ -19,7 +20,10 @@ export class OrdersComponent implements OnInit {
       this.router.navigate(['login']);
       return;  
     }
-    this.orderService.getAllOrders().toPromise().then(res => this.orders = res)
+    this.orderService.getAllOrders().toPromise().then(res => {
+      this.orders = res;
+      this.hasOrders = this.orders.length > 0;
+    })
   }
 
   getTotal(items) {
